@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Highest product</title>
+    <meta
+      name="viewport"
+      content="width=device-width, height=device-height, initial-scale=1.0"
+    />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>Highest product</h1>
+    </div>
+    <div class="box">
+      <p>
+        Enter your values into the input field and click the button to get the
+        highest product between three of those numbers
+      </p>
+      <textarea id="input-area" placeholder="Input text"></textarea>
+      <textarea id="output-area" placeholder="Highest product"> </textarea>
+      <div id="btn">
+        <button onclick="highestProduct()" id="btn-array" class="button">
+          Get highest Product
+        </button>
+      </div>
+    </div>
+    <script>
+      function highestProduct() {
+        // get textarea value
+        var data = document.getElementById("input-area").value;
+        // split value into an array
+        var dataArray = data.split(",");
+
+        // display data array
+        for (var i = 0; i < dataArray.length; i++) {
+          dataArray[i] = +dataArray[i];
+          console.log(dataArray);
+        }
+
+        // sort the result in accending order
+
+        var result = dataArray.sort(function (a, b) {
+          return a - b;
+        });
+        // get the length of the array
+        let n = dataArray.length;
+        // get the hight number
+        let maxNumber = result[n - 1] * result[n - 2] * result[n - 3];
+
+        if (maxNumber) {
+          document.getElementById("output-area").innerHTML =
+            " The highest product is = " + maxNumber;
+        } else {
+          document.getElementById("output-area").innerHTML = "";
+        }
+      }
+      highestProduct();
+    </script>
+  </body>
+</html>
