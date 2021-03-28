@@ -17,10 +17,14 @@
     </div>
     <div class="box">
       <p>
-        Enter your values into the input field and click the button to get the
-        highest product between three of those numbers
+        Enter your number into the input field(using commaseparation) and click
+        the button to get the highest product between three of those numbers
       </p>
-      <textarea id="input-area" placeholder="Input text"></textarea>
+      <textarea
+        id="input-area"
+        placeholder="Input text"
+        pattern="^[0-9]*$"
+      ></textarea>
       <textarea id="output-area" placeholder="Highest product"> </textarea>
       <div id="btn">
         <button onclick="highestProduct()" id="btn-array" class="button">
